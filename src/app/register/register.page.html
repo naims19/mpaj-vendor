@@ -1,0 +1,111 @@
+<ion-app>
+  <!-- font-link -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- header -->
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-icon slot="start" name="arrow-back-outline" routerLink="/login"></ion-icon>
+      <ion-title>DAFTAR AKAUN</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- apps content -->
+  <ion-content >
+  <div class="register-form">
+    <form [formGroup]="registrationForm" (ngSubmit)="submit()">
+      <ion-label>Jenis Pendaftaran</ion-label>
+      <ion-select  placeholder="Plih Kewarganegaraan">
+        <ion-select-option value="warganegara">Warganegara</ion-select-option>
+        <ion-select-option value="no">Bukan Warganegara</ion-select-option>
+      </ion-select>
+
+      <p>Email</p>
+      <ion-input type="email" formControlName="email"></ion-input>
+      <div *ngFor="let error of errorMessages.email">
+        <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <p>Nama Penuh</p>
+      <ion-input type="text" formControlName="name"></ion-input>
+      <div *ngFor="let error of errorMessages.name">
+        <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <p>Jenis Perniagaan</p>
+      <ion-select style="margin-top: -1rem;" placeholder="Plih Perniagaan">
+        <ion-select-option value="warganegara">Restoran</ion-select-option>
+        <ion-select-option value="no">Kedai Runcit</ion-select-option>
+      </ion-select>
+
+      <p>Nama Kedai</p>
+      <ion-input type="text" formControlName="shopname"></ion-input>
+      <div *ngFor="let error of errorMessages.shopname">
+        <ng-container *ngIf="shopname.hasError(error.type) && (shopname.dirty || shopname.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+      
+      <p>Nombor Telefon</p>
+      <ion-input inputmode="tel" formControlName="phone"></ion-input>
+      <div *ngFor="let error of errorMessages.phone">
+        <ng-container *ngIf="phone.hasError(error.type) && (phone.dirty || phone.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <p>Alamat</p>
+      <ion-input type="text" formControlName="street"></ion-input>
+      <div *ngFor="let error of errorMessages.street">
+        <ng-container *ngIf="street.hasError(error.type) && (street.dirty || street.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <p>Poskod</p>
+      <ion-input type="number" maxlength="5" formControlName="poscode"></ion-input>
+      <div *ngFor="let error of errorMessages.poscode">
+        <ng-container *ngIf="poscode.hasError(error.type) && (poscode.dirty || poscode.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <p>Negeri</p>
+      <ion-input type="text" formControlName="state"></ion-input>
+      <div *ngFor="let error of errorMessages.state">
+        <ng-container *ngIf="state.hasError(error.type) && (state.dirty || state.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <div class="password" formGroupName="passwords">
+        <p>Kata Laluan</p>
+        <ion-input type="password" formControlName="password" [(ngModel)]="passwords" id="password"></ion-input>
+        <!-- <div *ngIf="registrationForm.controls.passwords.password.touched">
+          <div class="text-danger"
+            *ngIf="registrationForm.controls.passwords.password.touched && registrationForm.controls.passwords.controls.password.hasError('required')">
+            Password is required</div>
+        </div> -->
+  
+        <p>Sahkan Kata Laluan</p>
+        <ion-input type="password" formControlName="cpassword" [(ngModel)]="cpasswords" id="cpassword" (keyup)="check($event)"></ion-input>
+        <div class="error" *ngIf="!confirms">
+          <p color="danger">kata laluan tidak sama</p>
+        </div>
+      </div>
+      
+      
+      <ion-button expand="block" fill="clear" type="submit" [disabled]="!registrationForm.valid">
+        DAFTAR
+      </ion-button>
+      <br>
+    </form>
+    
+  </div>
+  </ion-content>
+</ion-app>
+

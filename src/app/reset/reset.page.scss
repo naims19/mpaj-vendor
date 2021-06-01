@@ -1,0 +1,60 @@
+*{
+    font-family: 'Poppins', arial;
+}
+ion-content{
+    --background: none;
+    background-color: #F1F9FF;
+}
+a{
+    text-decoration: none;
+    color: #0555B6;
+}
+.logo{
+    margin-top: 8rem;
+}
+.logo img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
+.logo h2{
+    color: #0555B6;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.login-form{
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+.login-form ion-label{
+    color: #000;
+    font-size: 1.13rem;
+    padding-top: 1rem;
+}
+.login-form ion-input{
+    display: block;
+    padding-top: 1rem;
+    margin-right: 2rem;
+    border: 1px solid #C9C9C9;
+    width: 90%;
+    color: #000;
+    border-radius: 2px;
+}
+.login-form ion-button{
+    background-color: #0555B6;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.15rem;
+    border-radius: 5px;
+    width: 90%;
+    margin-top: 1.3rem;
+    margin-left: -0.01rem;
+    font-family: 'Montserrat', arial;
+}
+.password{
+    padding-top: 10rem;
+}

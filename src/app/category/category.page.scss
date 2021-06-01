@@ -1,0 +1,37 @@
+*{
+    font-family: 'Poppins', arial;
+  }
+  ion-toolbar{
+    --background: none;
+    background-color: #0555B6;
+    height: 4.5rem;
+    
+  
+    ion-menu-button{
+        margin-left: 1rem;
+        margin-top: 2rem;
+        font-weight: 600;
+    }
+  }
+  ion-title{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: 'Montserrat';
+  }
+  ion-content{
+    --background: none;
+    background-color: #fff;
+  }
+  .category ion-card{
+      background-size: cover;
+      height: 170px;
+      border: 2px solid #C9C9C9;
+      
+      ion-card-title{
+          color: #000;
+      }
+      ion-card-subtitle{
+          color: #000;
+      }
+  }

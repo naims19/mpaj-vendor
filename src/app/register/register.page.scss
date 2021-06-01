@@ -1,0 +1,71 @@
+*{
+    font-family: 'Poppins', arial;
+}
+ion-toolbar{
+    --background: none;
+    background-color: #0555B6;
+    height: 4rem;
+    
+
+    ion-icon{
+        margin-left: 1rem;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        font-weight: 600;
+    }
+}
+ion-title{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', arial;
+}
+ion-content{
+    --background: none;
+    background-color: #F1F9FF;
+}
+.register-form{
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+}
+.register-form ion-label{
+    color: #000;
+    margin-top: 10rem;
+}
+.register-form ion-select{
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #C9C9C9;
+    width: 90%;
+    margin-right: 2rem;
+}
+.register-form p{
+    color: #000;
+    margin-top: 1rem;
+}
+.register-form ion-input{
+    width: 90%;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #C9C9C9;
+    margin-top: -1rem;
+}
+.register-form ion-button{
+    background-color: #0555B6;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.15rem;
+    border-radius: 5px;
+    width: 90%;
+    margin-top: 1.3rem;
+    margin-left: -0.01rem;
+    height: 50px;
+    font-family: 'Montserrat', arial;
+}
+.error-message{
+    color: var(--ion-color-danger);
+}
+.error p{
+    color: var(--ion-color-danger);
+}

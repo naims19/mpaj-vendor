@@ -1,0 +1,32 @@
+ion-toolbar{
+    height: 3.5rem;
+    --background: none;
+    background-color: #072459;
+
+    ion-title{
+        font-family: 'Montserrat';
+        margin-top: 0.5rem;
+        color: #fff;
+        font-size: 1.3rem;
+    }
+}
+ion-content{
+    --background: none;
+    background-color: #072459;
+
+    ion-list{
+        --background: none;
+        background-color: #072459;
+
+        ion-item{
+            --background: none;
+            background-color: #072459;
+
+            ion-label{
+                color: #fff;
+                font-family: 'Poppins';
+            }
+        }
+    }
+}
+

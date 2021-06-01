@@ -1,0 +1,62 @@
+<ion-app>
+  <!-- font-link -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- header -->
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-buttons slot="start">
+          <ion-menu-button menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+      </ion-buttons>
+      <ion-title>PROFILE</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- apps content -->
+  <ion-content >
+    <div class="profile">
+      <!-- nombor pendaftaran -->
+      <ion-card>
+        <img src="assets/media/burger.jpg" alt="">
+        <ion-card-header>
+          <ion-label>Nama Kedai</ion-label>
+          <ion-icon name="pencil-outline" class="ion-float-right"></ion-icon>
+          <ion-label class="edit ion-float-right" routerLink="/edit-profile">Edit Profile</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>Ali Maju</ion-label>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Nama Pemilik Kedai</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>Muhamad Faiz Bin Zulkipli</ion-label>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Nombor Telefon</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>0175157736</ion-label>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Jenis Perniagaan</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>Restoran</ion-label>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Alamat</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>AC-4-12A JALAN PANDAN INDAH 3/6 PANDAN INDAH 55100
+            KUALA LUMPUR
+          </ion-label>
+        </ion-card-content>
+      </ion-card>
+      
+    </div>
+  </ion-content>
+</ion-app>
+

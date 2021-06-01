@@ -1,0 +1,54 @@
+*{
+    font-family: 'Poppins', arial;
+  }
+  ion-toolbar{
+    --background: none;
+    background-color: #0555B6;
+    height: 4.5rem;
+    
+  
+    ion-menu-button{
+        margin-left: 1rem;
+        margin-top: 2rem;
+        font-weight: 600;
+    }
+  }
+  ion-title{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: 'Montserrat';
+  }
+  ion-content{
+    --background: none;
+    background-color: #fff;
+  }
+  .profile ion-card{
+    --background: none;
+    background-color: #fff;
+    border: 1px solid #C9C9C9;
+
+    ion-card-header{
+        ion-label{
+            color: #000;
+            font-size: 1rem;
+            display: inline-flex;
+        }
+
+        .edit {
+            font-weight: 600;
+        }
+
+        ion-icon{
+            color: #000;
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+    }
+    ion-card-content{
+        ion-label{
+            color: #000;
+            font-weight: 600;
+        }
+    }
+}

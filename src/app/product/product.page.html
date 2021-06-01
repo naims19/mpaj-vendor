@@ -1,0 +1,44 @@
+<ion-app>
+  <!-- font-link -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- header -->
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-buttons slot="start">
+          <ion-menu-button menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+      </ion-buttons>
+      <ion-title>PRODUCT</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- apps content -->
+  <ion-content >
+    <div class="category">
+      <ion-card style="--background: url(../../assets/media/burger.jpg) no-repeat !important;">
+        <ion-card-header>
+          <ion-card-title>Burger</ion-card-title>
+          <ion-card-subtitle>Category : Western</ion-card-subtitle>
+          <ion-card-subtitle>RM 5</ion-card-subtitle>
+          <ion-card-subtitle>Quantity : 10</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+      <ion-card style="--background: url(../../assets/media/mee.jpg) no-repeat !important;">
+        <ion-card-header>
+          <ion-card-title>Mee Goreng</ion-card-title>
+          <ion-card-subtitle>Category : Goreng - Goreng</ion-card-subtitle>
+          <ion-card-subtitle>RM 5</ion-card-subtitle>
+          <ion-card-subtitle>Quantity 20</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="showModal()">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+</ion-app>
+
