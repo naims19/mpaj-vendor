@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
   <!-- header -->
-  <ion-header class="ion-no-border">
+  <ion-header class="ion-no-border" mode="ios">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-buttons slot="start">
@@ -16,7 +16,7 @@
   </ion-header>
   <!-- apps content -->
   <ion-content >
-    <div class="category">
+    <!-- <div class="category">
       <ion-card style="--background: url(../../assets/media/burger.jpg) no-repeat !important;" routerLink="/product">
         <ion-card-header>
           <ion-card-title>Western</ion-card-title>
@@ -26,6 +26,15 @@
       <ion-card style="--background: url(../../assets/media/mee.jpg) no-repeat !important;">
         <ion-card-header>
           <ion-card-title>Goreng - goreng</ion-card-title>
+          <ion-card-subtitle>3 Items</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div> -->
+    <div class="category">
+      <ion-card *ngFor="let category of Categorys" (click)="openDetails(category)">
+        <img src="{{category.gambar}}" alt="" srcset="">
+        <ion-card-header>
+          <ion-card-title>{{category.kategori}}</ion-card-title>
           <ion-card-subtitle>3 Items</ion-card-subtitle>
         </ion-card-header>
       </ion-card>

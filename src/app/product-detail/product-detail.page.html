@@ -15,15 +15,24 @@
     <div class="detail">
       <ion-card>
         <ion-card-header>
-          <ion-icon name="add-circle-outline"></ion-icon>
+          <!-- <ion-icon name="add-circle-outline" type="file"></ion-icon> -->
           <ion-card-subtitle>Add photo</ion-card-subtitle>
+            <ion-button  expand="block" fill="clear">
+              <ion-input type="file" (change)="chooseFile($event)"></ion-input>
+            </ion-button>
+            <div *ngIf="product.gambar">
+              <img src={{product.gambar}}>
+            </div>
         </ion-card-header>
         <ion-card-content>
-          <ion-input type="text" placeholder="product name"></ion-input>
-          <ion-input type="text" placeholder="category name"></ion-input>
-          <ion-input type="number" placeholder="price"></ion-input>
-          <ion-input type="number" placeholder="quantity"></ion-input>
-          <ion-button expand="block" fill="clear" shape="round">
+          <ion-input type="text" placeholder="product name" [(ngModel)]="product.nama"></ion-input>
+            <ion-select (ionChange)="onChange($event)" placeholder="Pilih Kategori" [(ngModel)]="product.kategori">
+              <ion-select-option *ngFor="let item of Category" value={{item.kategori}} >{{item.kategori}}</ion-select-option>
+            </ion-select>
+          <!-- <ion-input type="text" placeholder="category name" [(ngModel)]="product.kategori"></ion-input> -->
+          <ion-input type="number" placeholder="price" [(ngModel)]="product.harga"></ion-input>
+          <ion-input type="number" placeholder="quantity" [(ngModel)]="product.stok"></ion-input>
+          <ion-button expand="block" fill="clear" shape="round" (click)="add()">
             <ion-icon name="checkmark-done-outline"></ion-icon>
           </ion-button>
         </ion-card-content>

@@ -13,93 +13,116 @@
   <!-- apps content -->
   <ion-content >
   <div class="register-form">
-    <form [formGroup]="registrationForm" (ngSubmit)="submit()">
+    <form [formGroup]="ValidationFormUser" (ngSubmit)="registerUser()">
+
       <ion-label>Jenis Pendaftaran</ion-label>
-      <ion-select  placeholder="Plih Kewarganegaraan">
+      <!-- <ion-select formControlName="warganegara" name="warganegara" placeholder="Plih Kewarganegaraan">
         <ion-select-option value="warganegara">Warganegara</ion-select-option>
-        <ion-select-option value="no">Bukan Warganegara</ion-select-option>
-      </ion-select>
+        <ion-select-option value="no">Bukan Warganegara</ion-select-option> -->
+        <ion-select formControlName="warganegara" placeholder="Pilih Kewarganegaraan">
+          <ion-select-option *ngFor="let w of warga" value={{w}}>{{w}}</ion-select-option>
+        </ion-select>
+      <!-- </ion-select> -->
 
       <p>Email</p>
-      <ion-input type="email" formControlName="email"></ion-input>
-      <div *ngFor="let error of errorMessages.email">
-        <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
-          <small class="error-message">{{error.message}}</small>
+      <ion-input type="email" formControlName="email" name="email"></ion-input>
+      <div *ngFor="let validation of validationMessages.email">
+        <ng-container *ngIf="ValidationFormUser.get('email').hasError(validation.type) && 
+        (ValidationFormUser.get('email').dirty || ValidationFormUser.get('email'). touched)">
+          <small class="error-message">{{validation.message}}</small>
         </ng-container>
       </div>
 
       <p>Nama Penuh</p>
-      <ion-input type="text" formControlName="name"></ion-input>
-      <div *ngFor="let error of errorMessages.name">
-        <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
-          <small class="error-message">{{error.message}}</small>
+      <ion-input type="text" formControlName="name" name="name"></ion-input>
+      <div *ngFor="let validation of validationMessages.name">
+        <ng-container *ngIf="ValidationFormUser.get('name').hasError(validation.type) && 
+        (ValidationFormUser.get('name').dirty || ValidationFormUser.get('name'). touched)">
+          <small class="error-message">{{validation.message}}</small>
         </ng-container>
       </div>
 
       <p>Jenis Perniagaan</p>
-      <ion-select style="margin-top: -1rem;" placeholder="Plih Perniagaan">
+      <!-- <ion-select style="margin-top: -1rem;" placeholder="Plih Perniagaan">
         <ion-select-option value="warganegara">Restoran</ion-select-option>
         <ion-select-option value="no">Kedai Runcit</ion-select-option>
+      </ion-select> -->
+      <ion-select formControlName="perniagaan" placeholder="Pilih Perniagaan">
+        <ion-select-option *ngFor="let k of kedai" value={{k}}>{{k}}</ion-select-option>
       </ion-select>
 
       <p>Nama Kedai</p>
-      <ion-input type="text" formControlName="shopname"></ion-input>
-      <div *ngFor="let error of errorMessages.shopname">
-        <ng-container *ngIf="shopname.hasError(error.type) && (shopname.dirty || shopname.touched)">
-          <small class="error-message">{{error.message}}</small>
+      <ion-input type="text" formControlName="shopname" name="shopname"></ion-input>
+      <div *ngFor="let validation of validationMessages.shopname">
+        <ng-container *ngIf="ValidationFormUser.get('shopname').hasError(validation.type) && 
+        (ValidationFormUser.get('shopname').dirty || ValidationFormUser.get('shopname'). touched)">
+          <small class="error-message">{{validation.message}}</small>
         </ng-container>
       </div>
       
       <p>Nombor Telefon</p>
-      <ion-input inputmode="tel" formControlName="phone"></ion-input>
-      <div *ngFor="let error of errorMessages.phone">
+      <ion-input inputmode="tel" formControlName="phone" name="phone"></ion-input>
+      <div *ngFor="let validation of validationMessages.phone">
+        <ng-container *ngIf="ValidationFormUser.get('phone').hasError(validation.type) && 
+        (ValidationFormUser.get('phone').dirty || ValidationFormUser.get('phone'). touched)">
+          <small class="error-message">{{validation.message}}</small>
+        </ng-container>
+      </div>
+      <!-- <div *ngFor="let error of errorMessages.phone">
         <ng-container *ngIf="phone.hasError(error.type) && (phone.dirty || phone.touched)">
           <small class="error-message">{{error.message}}</small>
         </ng-container>
-      </div>
+      </div> -->
 
       <p>Alamat</p>
-      <ion-input type="text" formControlName="street"></ion-input>
-      <div *ngFor="let error of errorMessages.street">
-        <ng-container *ngIf="street.hasError(error.type) && (street.dirty || street.touched)">
-          <small class="error-message">{{error.message}}</small>
+      <ion-input type="text" formControlName="alamat" name="alamat"></ion-input>
+      <div *ngFor="let validation of validationMessages.alamat">
+        <ng-container *ngIf="ValidationFormUser.get('alamat').hasError(validation.type) && 
+        (ValidationFormUser.get('alamat').dirty || ValidationFormUser.get('alamat'). touched)">
+          <small class="error-message">{{validation.message}}</small>
         </ng-container>
       </div>
 
       <p>Poskod</p>
-      <ion-input type="number" maxlength="5" formControlName="poscode"></ion-input>
-      <div *ngFor="let error of errorMessages.poscode">
-        <ng-container *ngIf="poscode.hasError(error.type) && (poscode.dirty || poscode.touched)">
-          <small class="error-message">{{error.message}}</small>
+      <ion-input type="number" maxlength="5" formControlName="poskod" name="poskod"></ion-input>
+      <div *ngFor="let validation of validationMessages.poskod">
+        <ng-container *ngIf="ValidationFormUser.get('poskod').hasError(validation.type) && 
+        (ValidationFormUser.get('poskod').dirty || ValidationFormUser.get('poskod'). touched)">
+          <small class="error-message">{{validation.message}}</small>
         </ng-container>
       </div>
 
       <p>Negeri</p>
-      <ion-input type="text" formControlName="state"></ion-input>
-      <div *ngFor="let error of errorMessages.state">
-        <ng-container *ngIf="state.hasError(error.type) && (state.dirty || state.touched)">
-          <small class="error-message">{{error.message}}</small>
+      <ion-select formControlName="state" placeholder="Pilih Negeri">
+        <ion-select-option *ngFor="let n of negeri" value={{n}}>{{n}}</ion-select-option>
+      </ion-select>
+      <!-- <ion-input type="text" formControlName="state" name="state"></ion-input> -->
+      <div *ngFor="let validation of validationMessages.state">
+        <ng-container *ngIf="ValidationFormUser.get('state').hasError(validation.type) && 
+        (ValidationFormUser.get('state').dirty || ValidationFormUser.get('state'). touched)">
+          <small class="error-message">{{validation.message}}</small>
         </ng-container>
       </div>
 
-      <div class="password" formGroupName="passwords">
+      <!-- <div class="password" formGroupName="passwords"> -->
         <p>Kata Laluan</p>
-        <ion-input type="password" formControlName="password" [(ngModel)]="passwords" id="password"></ion-input>
-        <!-- <div *ngIf="registrationForm.controls.passwords.password.touched">
-          <div class="text-danger"
-            *ngIf="registrationForm.controls.passwords.password.touched && registrationForm.controls.passwords.controls.password.hasError('required')">
-            Password is required</div>
-        </div> -->
-  
-        <p>Sahkan Kata Laluan</p>
-        <ion-input type="password" formControlName="cpassword" [(ngModel)]="cpasswords" id="cpassword" (keyup)="check($event)"></ion-input>
-        <div class="error" *ngIf="!confirms">
-          <p color="danger">kata laluan tidak sama</p>
+        <ion-input type="password" formControlName="password" id="password" name="password" [(ngModel)]="passwords"></ion-input>
+        <div *ngFor="let validation of validationMessages.password">
+          <ng-container *ngIf="ValidationFormUser.get('password').hasError(validation.type) && 
+          (ValidationFormUser.get('password').dirty || ValidationFormUser.get('password'). touched)">
+            <small class="error-message">{{validation.message}}</small>
+          </ng-container>
         </div>
-      </div>
+  
+        <!-- <p>Sahkan Kata Laluan</p>
+        <ion-input type="password" formControlName="cpassword" id="cpassword" name="cpassword" (keyup)="check($event)"></ion-input>
+        <div class="error" *ngIf="!confirms">
+          <small class="error-message" color="danger">kata laluan tidak sama</small>
+        </div> -->
+      <!-- </div> -->
       
       
-      <ion-button expand="block" fill="clear" type="submit" [disabled]="!registrationForm.valid">
+      <ion-button expand="block" fill="clear" type="submit" [disabled]="!ValidationFormUser.valid">
         DAFTAR
       </ion-button>
       <br>

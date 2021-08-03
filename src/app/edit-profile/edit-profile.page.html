@@ -19,48 +19,67 @@
     <div class="profile">
       <!-- nombor pendaftaran -->
       <ion-card>
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
         <ion-card-header class="edit-photo">
           <ion-icon name="add-circle-outline"></ion-icon>
           <ion-card-subtitle>Add photo</ion-card-subtitle>
         </ion-card-header>
         <ion-card-header>
-          <ion-label>Nama Kedai</ion-label>
+          <ion-label>Nama Pemilik Kedai</ion-label>
           <ion-icon name="close" class="ion-float-right" routerLink="/profile"></ion-icon>
         </ion-card-header>
         <ion-card-content>
-          <ion-input type="number" placeholder="Ali Maju"></ion-input>
+          <ion-input type="text" placeholder="Ali Maju" formControlName="name"></ion-input>
         </ion-card-content>
         <ion-card-header>
-          <ion-label>Nama Pemilik Kedai</ion-label>
+          <ion-label>Kewarganegaraan</ion-label>
         </ion-card-header>
         <ion-card-content>
-          <ion-input type="text" placeholder="Muhamad Faiz Bin Zulkipli"></ion-input>
+          <ion-input type="text" placeholder="Muhamad Faiz Bin Zulkipli" formControlName="warganegara"></ion-input>
         </ion-card-content>
         <ion-card-header>
+          <ion-label>Nama Kedai</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input type="text" placeholder="Muhamad Faiz Bin Zulkipli" formControlName="shopname"></ion-input>
+        </ion-card-content>
+        <!-- <ion-card-header>
           <ion-label>Nombor Telefon</ion-label>
         </ion-card-header>
         <ion-card-content>
           <ion-input type="number" placeholder="0175157736"></ion-input>
-        </ion-card-content>
+        </ion-card-content> -->
         <ion-card-header>
           <ion-label>Jenis Perniagaan</ion-label>
         </ion-card-header>
         <ion-card-content>
-          <ion-input type="text" placeholder="Restoran"></ion-input>
+          <ion-input type="text" placeholder="Restoran" formControlName="perniagaan"></ion-input>
         </ion-card-content>
         <ion-card-header>
           <ion-label>Alamat</ion-label>
         </ion-card-header>
         <ion-card-content>
-          <ion-textarea placeholder="AC-4-12A JALAN PANDAN INDAH 3/6 PANDAN INDAH 55100 KUALA LUMPUR">
+          <ion-textarea placeholder="AC-4-12A JALAN PANDAN INDAH 3/6 PANDAN INDAH 55100 KUALA LUMPUR" formControlName="alamat">
           </ion-textarea>
         </ion-card-content>
-        <ion-button expand="block" fill="clear" shape="round">
+        <ion-card-header>
+          <ion-label>Negeri</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input type="text" formControlName="state"></ion-input>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Poskod</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input type="number" formControlName="poskod"></ion-input>
+        </ion-card-content>
+        <ion-button expand="block" fill="clear" shape="round" type="submit">
           Confirm changes
           <ion-icon name="checkmark-done-outline"></ion-icon>
         </ion-button>
+      </form>
       </ion-card>
-      
     </div>
   </ion-content>
 </ion-app>

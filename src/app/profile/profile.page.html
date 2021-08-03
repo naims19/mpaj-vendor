@@ -18,41 +18,57 @@
   <ion-content >
     <div class="profile">
       <!-- nombor pendaftaran -->
-      <ion-card>
-        <img src="assets/media/burger.jpg" alt="">
-        <ion-card-header>
-          <ion-label>Nama Kedai</ion-label>
-          <ion-icon name="pencil-outline" class="ion-float-right"></ion-icon>
-          <ion-label class="edit ion-float-right" routerLink="/edit-profile">Edit Profile</ion-label>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-label>Ali Maju</ion-label>
-        </ion-card-content>
+      <ion-card *ngFor="let user of Users">
+        <!-- <img src="assets/media/burger.jpg" alt=""> -->
         <ion-card-header>
           <ion-label>Nama Pemilik Kedai</ion-label>
+          <ion-icon name="pencil-outline" class="ion-float-right"></ion-icon>
+          <ion-label class="edit ion-float-right" (click)="editUser(user.id)">Edit Profile</ion-label>
         </ion-card-header>
         <ion-card-content>
-          <ion-label>Muhamad Faiz Bin Zulkipli</ion-label>
+          <ion-label>{{user.name}}</ion-label>
         </ion-card-content>
         <ion-card-header>
+          <ion-label>Kewarganegaraan</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>{{user.warganegara}}</ion-label>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Nama Kedai</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>{{user.shopname}}</ion-label>
+        </ion-card-content>
+        <!-- <ion-card-header>
           <ion-label>Nombor Telefon</ion-label>
         </ion-card-header>
         <ion-card-content>
           <ion-label>0175157736</ion-label>
-        </ion-card-content>
+        </ion-card-content> -->
         <ion-card-header>
           <ion-label>Jenis Perniagaan</ion-label>
         </ion-card-header>
         <ion-card-content>
-          <ion-label>Restoran</ion-label>
+          <ion-label>{{user.perniagaan}}</ion-label>
         </ion-card-content>
         <ion-card-header>
           <ion-label>Alamat</ion-label>
         </ion-card-header>
         <ion-card-content>
-          <ion-label>AC-4-12A JALAN PANDAN INDAH 3/6 PANDAN INDAH 55100
-            KUALA LUMPUR
-          </ion-label>
+          <ion-label>{{user.alamat}}</ion-label>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Negeri</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>{{user.state}}</ion-label>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Poskod</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>{{user.poskod}}</ion-label>
         </ion-card-content>
       </ion-card>
       

@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
-    path: 'edit-profile',
+    path: 'edit-profile/:id',
     loadChildren: () => import('./edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   },
   {
@@ -46,6 +46,14 @@ const routes: Routes = [
   {
     path: 'reset',
     loadChildren: () => import('./reset/reset.module').then( m => m.ResetPageModule)
+  },
+  {
+    path: 'product-update/:id',
+    loadChildren: () => import('./product-update/product-update.module').then( m => m.ProductUpdatePageModule)
+  },
+  {
+    path: 'product-all',
+    loadChildren: () => import('./product-all/product-all.module').then( m => m.ProductAllPageModule)
   },
 ];
 

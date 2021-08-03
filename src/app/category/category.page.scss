@@ -25,7 +25,9 @@
   }
   .category ion-card{
       background-size: cover;
-      height: 170px;
+      --background: none;
+      background-color: #fff;
+      
       border: 2px solid #C9C9C9;
       
       ion-card-title{

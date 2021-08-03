@@ -1,0 +1,66 @@
+<ion-app>
+  <!-- font-link -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- header -->
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-buttons slot="start">
+          <ion-menu-button menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+      </ion-buttons>
+      <ion-title>EDIT PROFILE</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- apps content -->
+  <ion-content >
+    <div class="profile">
+      <!-- nombor pendaftaran -->
+      <ion-card>
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <ion-card-header class="edit-photo">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          <ion-card-subtitle>Add photo</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-header>
+          <ion-label>Nama Produk</ion-label>
+          <ion-icon name="close" class="ion-float-right" routerLink="/product"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input type="text" placeholder="" formControlName="nama"></ion-input>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Kategori Produk</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input type="text" placeholder="" formControlName="kategori"></ion-input>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Harga</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input type="number" placeholder="" formControlName="harga"></ion-input>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-label>Kuantiti</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-input type="number" placeholder="" formControlName="stok"></ion-input>
+        </ion-card-content>
+        <ion-button expand="block" fill="clear" shape="round" class="editBtn" type="submit">
+          Confirm changes
+          <ion-icon name="checkmark-done-outline"></ion-icon>
+        </ion-button>
+        <ion-button expand="block" fill="clear" shape="round" class="deleteBtn">
+          Delete Product
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </form>
+      </ion-card>
+      
+    </div>
+  </ion-content>
+</ion-app>
+

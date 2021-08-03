@@ -8,6 +8,8 @@ import { ProductDetailPageRoutingModule } from './product-detail-routing.module'
 
 import { ProductDetailPage } from './product-detail.page';
 
+import { FormatFileSizePipe } from './format-file-size.pipe';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { ProductDetailPage } from './product-detail.page';
     IonicModule,
     ProductDetailPageRoutingModule
   ],
-  declarations: [ProductDetailPage]
+  declarations: [ProductDetailPage, FormatFileSizePipe]
 })
 export class ProductDetailPageModule {}

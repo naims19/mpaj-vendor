@@ -15,12 +15,17 @@
     <div class="detail">
       <ion-card>
         <ion-card-header>
-          <ion-icon name="add-circle-outline"></ion-icon>
           <ion-card-subtitle>Add photo</ion-card-subtitle>
+          <ion-button expand="block" fill="clear" >
+            <ion-input type="file" (change)="chooseFile($event)"></ion-input>
+          </ion-button>
+          <div *ngIf="category.gambar">
+            <img src={{category.gambar}}>
+          </div>
         </ion-card-header>
         <ion-card-content>
-          <ion-input type="text" placeholder="category name"></ion-input>
-          <ion-button expand="block" fill="clear" shape="round">
+          <ion-input type="text" placeholder="category name" [(ngModel)]="category.kategori"></ion-input>
+          <ion-button expand="block" fill="clear" shape="round" (click)="add()">
             <ion-icon name="checkmark-done-outline"></ion-icon>
           </ion-button>
         </ion-card-content>

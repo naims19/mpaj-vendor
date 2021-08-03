@@ -11,7 +11,7 @@
           <ion-menu-button menu="main-menu"></ion-menu-button>
         </ion-buttons>
       </ion-buttons>
-      <ion-title>PRODUCT</ion-title>
+      <ion-title>ALL PRODUCT</ion-title>
     </ion-toolbar>
   </ion-header>
   <!-- apps content -->
@@ -27,13 +27,13 @@
       </ion-card>
     </div> -->
     <div class="category">
-      <ion-card *ngFor="let product of product">
-        <img src="{{product.data.gambar}}" alt="">
+      <ion-card *ngFor="let product of Products">
+        <img src="{{product.gambar}}" alt="">
         <ion-card-header>
-          <ion-card-title>{{product.data.nama}}</ion-card-title>
-          <ion-card-subtitle>Category : {{product.data.kategori}}</ion-card-subtitle>
-          <ion-card-subtitle>RM {{product.data.harga}}</ion-card-subtitle>
-          <ion-card-subtitle>Quantity : {{product.data.stok}}</ion-card-subtitle>
+          <ion-card-title>{{product.nama}}</ion-card-title>
+          <ion-card-subtitle>Category : {{product.kategori}}</ion-card-subtitle>
+          <ion-card-subtitle>RM {{product.harga}}</ion-card-subtitle>
+          <ion-card-subtitle>Quantity : {{product.stok}}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
           <ion-card-subtitle style="color: #0555B6;" (click)="editProduct(product.id)">Edit

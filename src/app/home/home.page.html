@@ -16,6 +16,26 @@
   </ion-header>
   <!-- apps content -->
   <ion-content >
+    <div class="chart">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Total Products</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #doughnutCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div class="chart">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Total Products</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #barCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+    </div>
     <div class="dashboard">
       <ion-grid fixed>
         <div class="title">
@@ -84,7 +104,6 @@
             </ion-card>
           </ion-col>
           </ion-row>
-          
       </ion-grid>
     </div>
   </ion-content>
